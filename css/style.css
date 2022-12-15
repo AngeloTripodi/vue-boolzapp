@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+    --side-grey: #b1b1b1;
+    --hover-grey: #e9ebeb;
+  }
 
 main{
     background: linear-gradient(0deg, #dbdbd2 85%, #009688 60%);
@@ -22,16 +26,19 @@ main{
 }
 
 #optionSection{
-    background-color: red;
-
+    /* background-color: white; */
+    height: 100%
 }
 #chatSection{
-    background-color: green;
+    /* background-color: green; */
+    height: 100%
 }
 
-#userOption{
+#userOption, 
+#chatOption{
     background-color: #eaeaea;
     height: 60px;
+    border-right: 1px solid var(--side-grey);
 }
 
 #getNotify{
@@ -41,8 +48,25 @@ main{
 
 #searchBar{
     background-color: #fafafa;
-    height: 40px;
+    height: 5%;
     width: 100%;
 }
 
+#messageBar{
+    background-color: #fafafa;
+    height: 80px;
+    width: 100%;
+}
 
+#contactSection{
+    background-color: white;
+    height: 70%;
+    overflow: scroll;
+}
+
+#activeChat{
+    background-image:url(../img/mine.jpg);
+    height: 75%;
+    overflow: scroll;
+    
+}
