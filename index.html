@@ -48,16 +48,11 @@
                         <div id="chatOption" class="px-3 d-flex align-items-center">
                             <div>Angelo</div>
                         </div>
-                        <div id="activeChat" class="px-3 d-flex w-100 flex-column">
-                            <div class="senderContainer" v-for="textMessage in contacts">
-                                <div class="sender w-50">{{textMessage.messages[activeIndex].message}}</div>
+                        <div id="activeChat" class="px-3 d-flex w-100 flex-column" >
+                            <div :class="textMessage.status === 'sent' ? 'senderContainer' : 'receiverContainer' " v-for="textMessage in contacts[activeIndex].messages">
+                                <div class="w-50" :class="textMessage.status === 'sent' ? 'sender' : 'receiver' ">{{textMessage.message}}</div>
                             </div>
-                            <div class="receiverContainer">
-                                <div class="receiver w-50">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Temporibus excepturi harum at magnam laudantium. Tenetur, ipsa! Asperiores non error
-                                    facilis suscipit voluptatem? Error, facere enim consequatur natus perferendis quasi
-                                    quaerat?</div>
-                            </div>
+                            
 
 
                         </div>
