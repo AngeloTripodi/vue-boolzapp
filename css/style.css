@@ -69,30 +69,30 @@ main{
 
 #getNotify{
     background-color: #8edafc;
-    height: 80px;
+    height: 70px;
 }
 
 #searchBar{
     background-color: #fafafa;
-    height: 5%;
+    height: 50px;
     width: 100%;
 }
 
 #messageBar{
-    background-color: #fafafa;
-    height: 80px;
+    background-color: #f3eeea;
+    height: 70px;
     width: 100%;
 }
 
 #contactSection{
     background-color: white;
-    height: 70%;
+    height: calc(80% - 120px);
     overflow: scroll;
 }
 
 #activeChat{
     background-image:url(../img/mine.jpg);
-    height: 75%;
+    height: calc(80% - 70px);
     overflow: scroll;
     
 }
