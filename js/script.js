@@ -177,11 +177,12 @@ createApp({
                     return avatarLink;
                 },
 
-                message : function(activeIndex, messaggio){
-                    this.contacts[activeIndex].messages[messaggio]
+                activeChat : function(index){
+                    this.activeIndex=index;
+                },
+
                 }
             
-        }
         
     
 

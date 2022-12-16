@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div id="contactSection" class="px-3 d-flex flex-column noPadding">
-                            <div id="contact" class="d-flex" v-for="contact in contacts">
+                            <div id="contact" class="d-flex" v-for="(contact, index) in contacts" @click="activeChat(index)">
                                 <div id="imgContactSection">
                                     <img :src="avatarLinks(contact.avatar)" :alt="contact.name">
                                 </div>
@@ -49,7 +49,7 @@
                             <div>Angelo</div>
                         </div>
                         <div id="activeChat" class="px-3 d-flex w-100 flex-column" >
-                            <div :class="textMessage.status === 'sent' ? 'senderContainer' : 'receiverContainer' " v-for="textMessage in contacts[activeIndex].messages">
+                            <div :class="textMessage.status === 'sent' ? 'senderContainer' : 'receiverContainer' " v-for="(textMessage in contacts[activeIndex].messages">
                                 <div class="w-50" :class="textMessage.status === 'sent' ? 'sender' : 'receiver' ">{{textMessage.message}}</div>
                             </div>
                             

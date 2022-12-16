@@ -126,6 +126,7 @@ main{
 
 #contact:hover{
     background-color: var(--hover-grey);
+    cursor: pointer;
 }
 
 #chatText{
