@@ -186,20 +186,15 @@ createApp({
             if (element != "") {
                 this.contacts[this.activeIndex].messages.push({ message: element, status: 'sent' }),
                 
-                    setInterval(function () {
-                        this.contacts[this.activeIndex].messages.push({ message: 'Ok', status: 'received' })
-                  }, 1000);
-                   
-                
-                    // {
-                    //     message: 'ok!',
-                    //     status: 'received'
-                    // }
-
+                    setTimeout(this.reply, 1000);
                     
-                
         this.clearInput();
             }
+
+        },
+
+        reply : function(){
+            this.contacts[this.activeIndex].messages.push({ message: 'ok', status: 'received' })
         },
 
 clearInput: function () {
