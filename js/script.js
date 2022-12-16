@@ -172,6 +172,10 @@ createApp({
                 }
             },
             methods: {
+                avatarLinks : function(element){
+                    let avatarLink = (`./img/avatar${element}.jpg`)
+                    return avatarLink;
+                }
             
         }
         
