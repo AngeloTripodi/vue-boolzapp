@@ -1,10 +1,10 @@
-const {createApp} = Vue
+const { createApp } = Vue
 
 createApp({
-    data(){
-        return{
-            activeIndex : 0,
-            newMessage : "",
+    data() {
+        return {
+            activeIndex: 0,
+            newMessage: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -168,38 +168,49 @@ createApp({
                     ],
                 }
             ]
-            
-            
-                }
-            },
-            methods: {
-                avatarLinks : function(element){
-                    let avatarLink = (`./img/avatar${element}.jpg`)
-                    return avatarLink;
-                },
 
-                activeChat : function(index){
-                    this.activeIndex=index;
-                },
-                addMessageOnChat: function(element){
-                    if (element != ""){
-                        this.contacts[this.activeIndex].messages.push(
-                            {message : element,
-                             status : 'sent'
-                            },
-                            
-                            )
-                        this.clearInput();
-                    }
-                },
 
-                clearInput : function(){
-                    this.newMessage = "";
-                },
+        }
+    },
+    methods: {
+        avatarLinks: function (element) {
+            let avatarLink = (`./img/avatar${element}.jpg`)
+            return avatarLink;
+        },
 
-                }
-            
-        
-    
+        activeChat: function (index) {
+            this.activeIndex = index;
+        },
+
+        addMessageOnChat: function (element) {
+            if (element != "") {
+                this.contacts[this.activeIndex].messages.push({ message: element, status: 'sent' }),
+                
+                    setInterval(function () {
+                        this.contacts[this.activeIndex].messages.push({ message: 'Ok', status: 'received' })
+                  }, 1000);
+                   
+                
+                    // {
+                    //     message: 'ok!',
+                    //     status: 'received'
+                    // }
+
+                    
+                
+        this.clearInput();
+            }
+        },
+
+clearInput: function () {
+    this.newMessage = "";
+},
+
+
+    },
+   
+
+
+
 
 }).mount('#app')
