@@ -60,7 +60,7 @@
                         <div id="messageBar" class="px-3 d-flex">
                             <div class="d-flex align-items-center w-100">
                                 <div><i class="fa-regular fa-face-smile smile"></i></div>
-                                <input type="text" name="" id="chatText" class="w-100" placeholder="Scrivi un messaggio">
+                                <input type="text" v-model="newMessage" name="" id="chatText" class="w-100" placeholder="Scrivi un messaggio" @keyup.enter="addMessageOnChat(newMessage)">
                                 <div><i class="fa-solid fa-microphone mic"></i></div>
                             </div>
                         </div>
