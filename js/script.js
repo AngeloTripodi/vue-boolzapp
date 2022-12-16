@@ -3,7 +3,7 @@ const {createApp} = Vue
 createApp({
     data(){
         return{
-
+            activeIndex : 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -175,6 +175,10 @@ createApp({
                 avatarLinks : function(element){
                     let avatarLink = (`./img/avatar${element}.jpg`)
                     return avatarLink;
+                },
+
+                message : function(activeIndex, messaggio){
+                    this.contacts[activeIndex].messages[messaggio]
                 }
             
         }
