@@ -203,7 +203,11 @@ clearInput: function () {
 
 
     },
-   
+    computed: {
+        userFilter() {
+          return this.contacts[this.activeIndex].name.filter( name === 0)
+        }
+      }
 
 
 

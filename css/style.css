@@ -23,7 +23,7 @@ main{
 
 .sender{
     background-color: #d5f9ba;
-    padding: 1rem 2rem;
+    padding: 0.7rem 1rem;
     border-radius: 10px;
 }
 
@@ -36,7 +36,7 @@ main{
 
 .receiver{
     background-color: white;
-    padding: 1rem 2rem;
+    padding: 0.7rem 1rem;
     border-radius: 10px;
 }
 
@@ -131,10 +131,21 @@ main{
 }
 
 #contactName p,
-#activeContactName p {
+#activeContactName p,
+#lastLog p,
+#messageTime p {
     font-size: .8rem;
     color: #ccc8c9;
     margin-bottom: 0rem!important;
+}
+
+#messageTime p{
+    text-align: right;
+    font-size: .7rem;
+}
+
+#lastLog p{
+    font-size: .7rem;
 }
 
 #activeContactName p,
