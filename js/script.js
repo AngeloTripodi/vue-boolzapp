@@ -187,14 +187,14 @@ createApp({
                 this.contacts[this.activeIndex].messages.push({ message: element, status: 'sent' }),
                 
                     setTimeout(this.reply, 1000);
-                    
+
         this.clearInput();
             }
 
         },
 
         reply : function(){
-            this.contacts[this.activeIndex].messages.push({ message: 'ok', status: 'received' })
+            this.contacts[this.activeIndex].messages.push({ message: 'Ok!', status: 'received' })
         },
 
 clearInput: function () {

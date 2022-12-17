@@ -19,19 +19,34 @@
             <div class="container-fluid">
                 <div id="windowChat" class="row justify-content-center ">
                     <div id="optionSection" class="col-4 noPadding">
-                        <div id="userOption" class="px-3 d-flex align-items-center">
-                            <div>Angelo</div>
+                        <div id="userOption" class="d-flex justify-content-between">
+                            <div id="myAvatar" class="px-3 d-flex align-items-center">
+                                <div id="myImgSection">
+                                    <img src="./img/avatar_1.jpg" alt="Angelo">
+                                </div>
+                                <div id="myName">
+                                    <span>Angelo</span>
+                                </div>
+                            </div>
+
+                            <div id="myOption" class="px-3 d-flex align-items-center">
+                                <div><i class="fa-solid fa-arrows-rotate"></i></div>
+                                <div><i class="fa-solid fa-message"></i></div>
+                                <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                            </div>
                         </div>
                         <div id="getNotify" class="px-3 d-flex">
                             <div class="d-flex align-items-center">Ricevi Notifiche di nuovi messaggi</div>
                         </div>
                         <div id="searchBar" class="px-3 d-flex">
                             <div class="d-flex align-items-center w-100">
-                                <input type="search" name="" id="chatFilter" class="w-100" placeholder="Cerca o inizia una nuova chat">
+                                <input type="search" name="" id="chatFilter" class="w-100"
+                                    placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
                         <div id="contactSection" class="px-3 d-flex flex-column noPadding">
-                            <div id="contact" class="d-flex" v-for="(contact, index) in contacts" @click="activeChat(index)">
+                            <div id="contact" class="d-flex" v-for="(contact, index) in contacts"
+                                @click="activeChat(index)" :class="activeIndex === index ? 'active' : '' ">
                                 <div id="imgContactSection">
                                     <img :src="avatarLinks(contact.avatar)" :alt="contact.name">
                                 </div>
@@ -45,14 +60,32 @@
 
                     </div>
                     <div id="chatSection" class="col-6 noPadding">
-                        <div id="chatOption" class="px-3 d-flex align-items-center">
-                            <div>Angelo</div>
-                        </div>
-                        <div id="activeChat" class="px-3 d-flex w-100 flex-column" >
-                            <div :class="textMessage.status === 'sent' ? 'senderContainer' : 'receiverContainer' " v-for="(textMessage in contacts[activeIndex].messages">
-                                <div class="w-50" :class="textMessage.status === 'sent' ? 'sender' : 'receiver' ">{{textMessage.message}}</div>
+                        <div id="chatOption" class="px-3 align-items-center d-flex justify-content-between">
+
+                            <div id="activeAvatar" class="px-3 d-flex align-items-center">
+                                <div id="activeImgSection">
+                                    <img :src="avatarLinks(contacts[activeIndex].avatar)" :alt="contacts[activeIndex].name">
+                                </div>
+                                <div id="activeContactName">
+                                    <span>{{contacts[activeIndex].name}}</span>
+                                    <p>Ultimo accesso oggi alle 12:00</p>
+                                </div>
                             </div>
-                            
+
+                            <div id="myOption" class="px-3 d-flex align-items-center">
+                                <div><i class="fa-solid fa-magnifying-glass"></i></div>
+                                <div><i class="fa-solid fa-paperclip"></i></div>
+                                <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                            </div>
+
+                        </div>
+                        <div id="activeChat" class="px-3 d-flex w-100 flex-column">
+                            <div :class="textMessage.status === 'sent' ? 'senderContainer' : 'receiverContainer' "
+                                v-for="(textMessage in contacts[activeIndex].messages">
+                                <div class="w-50" :class="textMessage.status === 'sent' ? 'sender' : 'receiver' ">
+                                    {{textMessage.message}}</div>
+                            </div>
+
 
 
                         </div>
@@ -60,7 +93,8 @@
                         <div id="messageBar" class="px-3 d-flex">
                             <div class="d-flex align-items-center w-100">
                                 <div><i class="fa-regular fa-face-smile smile"></i></div>
-                                <input type="text" v-model="newMessage" name="" id="chatText" class="w-100" placeholder="Scrivi un messaggio" @keyup.enter="addMessageOnChat(newMessage)">
+                                <input type="text" v-model="newMessage" name="" id="chatText" class="w-100"
+                                    placeholder="Scrivi un messaggio" @keyup.enter="addMessageOnChat(newMessage)">
                                 <div><i class="fa-solid fa-microphone mic"></i></div>
                             </div>
                         </div>

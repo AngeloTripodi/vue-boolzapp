@@ -24,7 +24,7 @@ main{
 .sender{
     background-color: #d5f9ba;
     padding: 1rem 2rem;
-    border-radius: 2rem;
+    border-radius: 10px;
 }
 
 .senderContainer{
@@ -37,7 +37,7 @@ main{
 .receiver{
     background-color: white;
     padding: 1rem 2rem;
-    border-radius: 2rem;
+    border-radius: 10px;
 }
 
 .receiverContainer{
@@ -49,6 +49,7 @@ main{
 
 #windowChat{
     height: 90vh;
+    min-width: 900px;
 }
 
 #optionSection{
@@ -97,12 +98,20 @@ main{
     
 }
 
-#contactName{
+#contactName,
+#myName
+{
     padding-left: 1rem;
     padding-top: 5px;
 }
 
-#imgContactSection img{
+#activeContactName{
+    padding-left: 1rem;
+}
+
+#imgContactSection img,
+#myImgSection img,
+#activeAvatar img{
     vertical-align: middle;
     width: 50px;
     border-radius: 55%;
@@ -113,10 +122,15 @@ main{
     font-weight: bold;
 }
 
-#contactName p{
+#contactName p,
+#activeContactName p{
     font-size: .8rem;
     color: #ccc8c9;
     margin-bottom: 0rem!important;
+}
+
+#activeContactName p{
+    color: #8c8c9f;
 }
 
 #contact{
@@ -129,12 +143,20 @@ main{
     cursor: pointer;
 }
 
+.active{
+    background-color: var(--hover-grey);
+}
+
 #chatText{
-    padding: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--hover-grey);
 }
 
 #chatFilter{
     padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--hover-grey);
 }
 
 #messageBar i{
@@ -151,4 +173,8 @@ main{
     padding-left: 2.5rem!important;
 } 
 
-
+i{
+    font-size: 20px;
+    padding: .5rem;
+    color: var(--side-grey);
+}
