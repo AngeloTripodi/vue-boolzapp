@@ -105,32 +105,46 @@ main{
     padding-top: 5px;
 }
 
-#activeContactName{
+#activeContactName,
+#notifyText{
     padding-left: 1rem;
 }
 
 #imgContactSection img,
 #myImgSection img,
-#activeAvatar img{
+#activeAvatar img {
     vertical-align: middle;
     width: 50px;
     border-radius: 55%;
     padding: 5px 0; 
 }
 
+#bellIcon i{
+    background-color: white;
+    border-radius: 55%;
+    color: #8edafc;
+}
+
+
 #contactName span{
     font-weight: bold;
 }
 
 #contactName p,
-#activeContactName p{
+#activeContactName p {
     font-size: .8rem;
     color: #ccc8c9;
     margin-bottom: 0rem!important;
 }
 
-#activeContactName p{
+#activeContactName p,
+#notifyText p{
     color: #8c8c9f;
+}
+
+#notifyText p{
+    font-size: .8rem;
+    margin-bottom: 0rem!important;
 }
 
 #contact{
