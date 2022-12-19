@@ -203,3 +203,12 @@ i{
     padding: .5rem;
     color: var(--side-grey);
 }
+
+
+.none{
+    display: none;
+}
+
+.block{
+    display: block;
+}

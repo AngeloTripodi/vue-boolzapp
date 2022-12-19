@@ -49,12 +49,11 @@
 
                         <div id="searchBar" class="px-3 d-flex">
                             <div class="d-flex align-items-center w-100">
-                                <input type="search" name="" id="chatFilter" class="w-100" v:model="userFilter()"
-                                    placeholder="Cerca o inizia una nuova chat">
+                                <input type="search" name="" id="chatFilter" class="w-100" v-model="userFilterField" placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
                         <div id="contactSection" class="px-3 d-flex flex-column noPadding">
-                            <div id="contact" class="d-flex justify-content-between" v-for="(contact, index) in contacts"
+                            <div id="contact" class="d-flex justify-content-between" v-for="(contact, index) in filteredList"
                                 @click="activeChat(index)" :class="activeIndex === index ? 'active' : '' ">
                                 <div id="contactInfo" class="d-flex">
                                     <div id="imgContactSection">
@@ -96,7 +95,7 @@
                         </div>
                         <div id="activeChat" class="px-3 d-flex w-100 flex-column">
                             <div :class="textMessage.status === 'sent' ? 'senderContainer' : 'receiverContainer' "
-                                v-for="(textMessage in contacts[activeIndex].messages">
+                                v-for="textMessage in contacts[activeIndex].messages">
                                 <div class="w-50" :class="textMessage.status === 'sent' ? 'sender' : 'receiver' ">
                                     {{textMessage.message}}
                                     <div id="messageTime">

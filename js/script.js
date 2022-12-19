@@ -5,6 +5,7 @@ createApp({
         return {
             activeIndex: 0,
             newMessage: "",
+            userFilterField: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -185,29 +186,49 @@ createApp({
         addMessageOnChat: function (element) {
             if (element != "") {
                 this.contacts[this.activeIndex].messages.push({ message: element, status: 'sent' }),
-                
+
                     setTimeout(this.reply, 1000);
 
-        this.clearInput();
+                this.clearInput();
             }
 
         },
 
-        reply : function(){
+        reply: function () {
             this.contacts[this.activeIndex].messages.push({ message: 'Ok!', status: 'received' })
         },
 
-clearInput: function () {
-    this.newMessage = "";
-},
+        clearInput: function () {
+            this.newMessage = "";
+        },
+        
+        
+
+      
+              
+        },
+        computed: {
+            filteredList() {
+              return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.userFilterField))
+            }
+          }
 
 
-    },
-    computed: {
-        userFilter() {
-          return this.contacts[this.activeIndex].name.filter( name === 0)
-        }
-      }
+
+        // for(let i=0; i<this.contacts.length; i++ ){
+
+        //    if(this.contacts[i].name.toLowerCase().includes(text.toLowerCase())){
+        //     this.contacts[i].push({ visible : 'true' })
+        //     console.log(this.contacts.visible)
+        //    } else {
+        //     this.contacts[i].push({ visible : 'false' })
+        //     console.log(this.contacts.visible)
+        //    }
+
+    // if(this.contacts[this.activeIndex].name.includes(text)){
+    //     console.log('ok')
+    //     console.log(this.contacts.name)
+    // }
 
 
 
