@@ -202,33 +202,29 @@ createApp({
             this.newMessage = "";
         },
         
-        
-
-      
-              
+        filteredList : function() {
+            
+             this.contacts.forEach((element) => {
+                
+                
+                let filtered = element.name.toLowerCase().includes(this.userFilterField.toLowerCase())
+                if(filtered === true){
+                    element.visible=true;
+                } else if (filtered === false){
+                    element.visible=false;
+                }
+                console.log(filtered)
+               
+                  
+                })              
         },
-        computed: {
-            filteredList() {
-              return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.userFilterField))
-            }
-          }
 
-
-
-        // for(let i=0; i<this.contacts.length; i++ ){
-
-        //    if(this.contacts[i].name.toLowerCase().includes(text.toLowerCase())){
-        //     this.contacts[i].push({ visible : 'true' })
-        //     console.log(this.contacts.visible)
-        //    } else {
-        //     this.contacts[i].push({ visible : 'false' })
-        //     console.log(this.contacts.visible)
-        //    }
-
-    // if(this.contacts[this.activeIndex].name.includes(text)){
-    //     console.log('ok')
-    //     console.log(this.contacts.name)
-    // }
+    }
+        // computed: {
+        //     filteredList() {
+        //       return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.userFilterField))
+        //     }
+        //   }
 
 
 

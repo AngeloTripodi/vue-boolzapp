@@ -49,11 +49,11 @@
 
                         <div id="searchBar" class="px-3 d-flex">
                             <div class="d-flex align-items-center w-100">
-                                <input type="search" name="" id="chatFilter" class="w-100" v-model="userFilterField" placeholder="Cerca o inizia una nuova chat">
+                                <input type="search" name="" id="chatFilter" class="w-100" v-model="userFilterField" placeholder="Cerca o inizia una nuova chat" @keyup="filteredList()">
                             </div>
                         </div>
                         <div id="contactSection" class="px-3 d-flex flex-column noPadding">
-                            <div id="contact" class="d-flex justify-content-between" v-for="(contact, index) in filteredList"
+                            <div id="contact" class="d-flex justify-content-between" v-for="(contact, index) in contacts" :class="contacts[index].visible === true ? 'd-block' : 'd-none' "
                                 @click="activeChat(index)" :class="activeIndex === index ? 'active' : '' ">
                                 <div id="contactInfo" class="d-flex">
                                     <div id="imgContactSection">
