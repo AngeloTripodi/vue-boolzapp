@@ -201,25 +201,50 @@ createApp({
         clearInput: function () {
             this.newMessage = "";
         },
-        
-        filteredList : function() {
-            
-             this.contacts.forEach((element) => {
-                
-                
+
+        filteredList: function () {
+
+            this.contacts.forEach((element) => {
+
+
                 let filtered = element.name.toLowerCase().includes(this.userFilterField.toLowerCase())
-                if(filtered === true){
-                    element.visible=true;
-                } else if (filtered === false){
-                    element.visible=false;
+                if (filtered === true) {
+                    element.visible = true;
+                } else if (filtered === false) {
+                    element.visible = false;
                 }
                 console.log(filtered)
-               
-                  
-                })              
+
+
+            })
         },
 
-    }
+
+        },
+    
+
+        // date: function () {
+
+        //     const DateTime = luxon.DateTime;
+        //     console.log(this.contacts[0].messages[0].date)
+        //     for (let i = 0; i < this.contacts.lenght; i++) {
+        //         let singleHour = this.contacts[i].messages[i].date
+        //         console.log(this.contacts[i].messages[i].date)
+        //         return singleHour
+        //     }
+
+        // }
+
+
+
+
+
+
+
+
+                // console.log(DateTime.fromISO(this.contacts[this.activeIndex].messages[this.activeIndex].date).toLocaleString(DateTime.TIME_SIMPLE))
+                
+
         // computed: {
         //     filteredList() {
         //       return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.userFilterField))
