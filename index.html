@@ -54,14 +54,14 @@
                         </div>
                         <div id="contactSection" class="px-3 d-flex flex-column noPadding">
                             <div id="contact" class="d-flex justify-content-between" v-for="(contact, index) in contacts" :class="contacts[index].visible === true ? 'd-block' : 'd-none' "
-                                @click="activeChat(index)" :class="activeIndex === index ? 'active' : '' ">
+                                @click="activeChat(index)" :class="activeIndex === index ? 'active' : '' " v-for="(message, index) in contacts[index].messages">
                                 <div id="contactInfo" class="d-flex">
                                     <div id="imgContactSection">
                                         <img :src="avatarLinks(contact.avatar)" :alt="contact.name">
                                     </div>
                                     <div id="contactName">
                                         <span>{{contact.name}}</span>
-                                        <p  v-for="(message, index) in contacts[index].messages">{{message.message}}</p>
+                                        <p>{{contacts[index].messages[contacts[index].messages.length-1].message}}</p>
                                     </div>
                                 </div>
                                 <div id="lastLog">

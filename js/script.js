@@ -219,37 +219,16 @@ createApp({
             })
         },
 
+       
 
-        },
-    
-
-        // date: function () {
-
-        //     const DateTime = luxon.DateTime;
-        //     console.log(this.contacts[0].messages[0].date)
-        //     for (let i = 0; i < this.contacts.lenght; i++) {
-        //         let singleHour = this.contacts[i].messages[i].date
-        //         console.log(this.contacts[i].messages[i].date)
-        //         return singleHour
-        //     }
-
+        // lastMess : function(element) {
+        //     let lastElement = element.slice(-1);
+        //     console.log(lastElement)
+        //     return lastElement
+            
         // }
 
-
-
-
-
-
-
-
-                // console.log(DateTime.fromISO(this.contacts[this.activeIndex].messages[this.activeIndex].date).toLocaleString(DateTime.TIME_SIMPLE))
-                
-
-        // computed: {
-        //     filteredList() {
-        //       return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.userFilterField))
-        //     }
-        //   }
+        },
 
 
 
