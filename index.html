@@ -49,12 +49,15 @@
 
                         <div id="searchBar" class="px-3 d-flex">
                             <div class="d-flex align-items-center w-100">
-                                <input type="search" name="" id="chatFilter" class="w-100" v-model="userFilterField" placeholder="Cerca o inizia una nuova chat" @keyup="filteredList()">
+                                <input type="search" name="" id="chatFilter" class="w-100" v-model="userFilterField"
+                                    placeholder="Cerca o inizia una nuova chat" @keyup="filteredList()">
                             </div>
                         </div>
                         <div id="contactSection" class="px-3 d-flex flex-column noPadding">
-                            <div id="contact" class="d-flex justify-content-between" v-for="(contact, index) in contacts" :class="contacts[index].visible === true ? 'd-block' : 'd-none' "
-                                @click="activeChat(index)" :class="activeIndex === index ? 'active' : '' " v-for="(message, index) in contacts[index].messages">
+                            <div id="contact" class="d-flex justify-content-between"
+                                v-for="(contact, index) in contacts" 
+                                :class="contacts[index].visible === true ? 'd-block' : 'd-none' , activeIndex === index ? 'active' : ''"
+                                @click="activeChat(index)" >
                                 <div id="contactInfo" class="d-flex">
                                     <div id="imgContactSection">
                                         <img :src="avatarLinks(contact.avatar)" :alt="contact.name">
@@ -102,9 +105,9 @@
                                         <p>12:00</p>
                                     </div>
                                 </div>
-                               
+
                             </div>
-                           
+
 
 
 
